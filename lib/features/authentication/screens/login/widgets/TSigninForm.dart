@@ -5,6 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:t_store/features/authentication/screens/signup/signup.dart';
+import 'package:t_store/navigation_Bar.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
 
@@ -17,8 +18,7 @@ class TSiginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-            vertical: TSizes.spaceBtwSections),
+        padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
         child: Column(
           children: [
             ///email
@@ -50,10 +50,10 @@ class TSiginForm extends StatelessWidget {
               children: [
                 Checkbox(value: true, onChanged: (value) {}),
                 const Text(TTexts.rememberMe),
-                SizedBox(width: 76,),
+                SizedBox(
+                  width: 76,
+                ),
                 TextButton(
-
-
                   onPressed: () => Get.to(() => ForgetPasswordScreen()),
                   child: const Text(TTexts.forgetPassword),
                 ),
@@ -65,9 +65,10 @@ class TSiginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-
-                onPressed: () {},
-                child: const Text(TTexts.signIn, ),
+                onPressed: () => Get.to(() =>  BottomNavBarScreen ()),
+                child: const Text(
+                  TTexts.signIn,
+                ),
               ),
             ),
             const SizedBox(
@@ -79,16 +80,14 @@ class TSiginForm extends StatelessWidget {
               width: double.infinity,
               child: OutlinedButton(
                 onPressed: () => Get.to(() => const SignupScreen()),
-
-
                 child: const Text(TTexts.createAccount),
               ),
             ),
-
           ],
         ),
       ),
     );
   }
 }
+
 
