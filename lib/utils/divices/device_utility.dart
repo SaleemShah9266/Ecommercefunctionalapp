@@ -28,12 +28,17 @@ class TDeviceUtils {
     final viewInsets = View.of(context).viewInsets;
     return viewInsets.bottom != 0;
   }
+  static void setFullScreen(bool enable) {
+    SystemChrome.setEnabledSystemUIMode(
+        enable ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge);
+  }
 
-  static double setFullScreenHeight() {
+  static double getScreenHeight() {
     return MediaQuery.of(Get.context!).size.height;
   }
 
-  static double setFullScreenWidth(BuildContext context) {
+
+  static double getScreenWidth(BuildContext context) {
     return MediaQuery.of(Get.context!).size.width;
   }
 
