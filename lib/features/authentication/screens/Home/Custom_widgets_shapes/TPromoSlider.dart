@@ -5,7 +5,7 @@ import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shap
 import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/TRoundedBanners.dart';
 import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/circularContainer.dart';
 import 'package:t_store/utils/constants/TColors.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
+
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 class TPromoSlider extends StatelessWidget {
