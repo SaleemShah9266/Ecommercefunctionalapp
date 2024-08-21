@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -5,10 +6,12 @@ import 'package:t_store/common/AppBar/AppBar.dart';
 import 'package:t_store/common/AppBar/TCartCounter.dart';
 import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/THomeCategories.dart';
 import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/TPrimary_Heaader_Container.dart';
+import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/TPromoSlider.dart';
 import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/TRoundedBanners.dart';
 import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/TSearchContainer.dart';
 import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/TSectionHeading.dart';
 import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/TVerticalImageText.dart';
+import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/circularContainer.dart';
 import 'package:t_store/features/authentication/screens/Home/HomeScreen.dart';
 
 import 'package:t_store/utils/constants/TColors.dart';
@@ -97,7 +100,7 @@ class Homescreen extends StatelessWidget {
 
             Padding(
               padding: EdgeInsets.all(TSizes.defaultSpace),
-              child: TRoundedImage(imageUrl: TImages.promoBanner2,),
+              child: TPromoSlider(banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3],),
             ),
           ],
         ),
@@ -105,4 +108,5 @@ class Homescreen extends StatelessWidget {
     );
   }
 }
+
 
