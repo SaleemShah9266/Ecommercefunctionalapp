@@ -3,6 +3,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/styles/TShadowStyle.dart';
 import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/TRoundedBanners.dart';
 import 'package:t_store/features/authentication/screens/Home/carts/TCircularIcon.dart';
+import 'package:t_store/features/authentication/screens/Home/carts/TProductPriceText.dart';
 import 'package:t_store/features/authentication/screens/Home/carts/TRoundedContainer.dart';
 import 'package:t_store/features/authentication/screens/Home/product/TProductTitleText.dart';
 import 'package:t_store/utils/constants/TColors.dart';
@@ -85,9 +86,7 @@ class TProductCardVertical extends StatelessWidget {
                   children: [
                     ///prices
                     
-                    Text('\$35.5',maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.headlineMedium,),
+                    TProductPriceText( isLarge: true, price: '35.0',),
                     Container(
                       decoration: BoxDecoration(
                         color: TColors.dark,
@@ -119,4 +118,5 @@ class TProductCardVertical extends StatelessWidget {
     );
   }
 }
+
 

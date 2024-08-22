@@ -8,6 +8,7 @@ import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shap
 import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/TPromoSlider.dart';
 import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/TSearchContainer.dart';
 import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/TSectionHeading.dart';
+import 'package:t_store/features/authentication/screens/Home/Layout/GridLayOut.dart';
 import 'package:t_store/features/authentication/screens/Home/carts/Product_card_vertical.dart';
 import 'package:t_store/features/authentication/screens/Home/carts/TRoundedContainer.dart';
 import 'package:t_store/features/authentication/screens/Home/carts/TRoundedImages.dart';
@@ -17,7 +18,6 @@ import 'package:t_store/utils/constants/TColors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
-
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});
@@ -100,31 +100,30 @@ class Homescreen extends StatelessWidget {
               padding: EdgeInsets.all(TSizes.defaultSpace),
               child: Column(
                 children: [
-                  TPromoSlider(banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3],),
+                  ///---promo slider images
+                  TPromoSlider(
+                    banners: [
+                      TImages.promoBanner1,
+                      TImages.promoBanner2,
+                      TImages.promoBanner3
+                    ],
+                  ),
+                  SizedBox(
+                    height: TSizes.spaceBtwSections,
+                  ),
+
+                  ///--- popular products
+                  TGridLayOut(itemCount: 2,itemBuilder: (_, index) => TProductCardVertical())
                 ],
               ),
-
-
-
             ),
-            TProductCardVertical(),
-
-
-
 
             // TRoundedImages(imageUrl: TImages.productImage1, applyImageRadius: true,),
-
-
-            ///--- Favourit icon
-
           ],
-
         ),
       ),
     );
   }
 }
-
-
 
 
