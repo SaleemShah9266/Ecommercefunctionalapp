@@ -80,35 +80,39 @@ class TProductCardVertical extends StatelessWidget {
                     Icon(Iconsax.verify5, color: TColors.primary, size: TSizes.iconxs,)
                   ],
                 ),
-                // Spacer(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ///prices
-                    
-                    TProductPriceText( isLarge: true, price: '35.0',),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: TColors.dark,
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(TSizes.cardRadiusMd),
-                          bottomRight: Radius.circular(TSizes.productImageRadius),
-                        ),
-                      ),
-                      child: SizedBox(
-                        width: TSizes.iconlg * 1.2,
-                        height: TSizes.iconlg * 1.2,
-                        child: Center(child: Icon(Iconsax.add,color: TColors.white,),),
-                      ),
-                    )
-      
-                  ],
-                )
+
       
               ],
             ),
       
             ),
+            Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ///prices
+
+                Padding(
+                  padding: const EdgeInsets.only(left: TSizes.sm),
+                  child: TProductPriceText( isLarge: true, price: '25.0',),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: TColors.dark,
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(TSizes.cardRadiusMd),
+                      bottomRight: Radius.circular(TSizes.productImageRadius),
+                    ),
+                  ),
+                  child: SizedBox(
+                    width: TSizes.iconlg * 1.2,
+                    height: TSizes.iconlg * 1.2,
+                    child: Center(child: Icon(Iconsax.add,color: TColors.white,),),
+                  ),
+                )
+
+              ],
+            )
       
       
       

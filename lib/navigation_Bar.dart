@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/features/authentication/screens/Home/HomeScreen.dart';
+import 'package:t_store/features/authentication/screens/Home/store/TStore.dart';
 import 'package:t_store/utils/constants/TColors.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
@@ -41,5 +42,5 @@ class BottomNavBarScreen extends StatelessWidget {
 
 class NavigationController extends GetxController{
   final Rx<int> selectedIndex= 0.obs;
-  final screens =[const Homescreen(),Container(color: Colors.purple,),Container(color: Colors.orange,),Container(color: Colors.blue,), ];
+  final screens =[const Homescreen(), StoreScreen(), Container(color: Colors.purple,),Container(color: Colors.orange,),Container(color: Colors.blue,), ];
 }
