@@ -4,7 +4,11 @@ import 'package:t_store/common/AppBar/TCartCounter.dart';
 import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/TSearchContainer.dart';
 import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/TSectionHeading.dart';
 import 'package:t_store/features/authentication/screens/Home/carts/TRoundedContainer.dart';
+import 'package:t_store/features/authentication/screens/Home/store/TBrandTitleText.dart';
+import 'package:t_store/features/authentication/screens/Home/store/TBrandTitleTextWithVerifiedIcon.dart';
+import 'package:t_store/features/authentication/screens/Home/store/TCircularImage.dart';
 import 'package:t_store/utils/constants/TColors.dart';
+import 'package:t_store/utils/constants/enums.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
@@ -46,27 +50,34 @@ class StoreScreen extends StatelessWidget {
                   TSectionHeading(title: 'Feature Brands', onPressed: (){},),
                   SizedBox(height: TSizes.spaceBtwItems /1.5,),
 
-                  TRoundedContainer(
-                    padding: EdgeInsets.all(TSizes.sm),
-                    showBorder: true,
-                    backgroundColor: Colors.transparent,
-                    child: Row(
-                      children: [
-                        ///---Icon
-                        Container(
-                          width: 56,
-                          height: 56,
-                          padding: EdgeInsets.all(TSizes.sm),
-                          decoration: BoxDecoration(
-                            color: THelperFunctions.isDarkMode(context) ? TColors.black : TColors.white,
-                            borderRadius: BorderRadius.circular(100),
+                  Container(
+                    child: TRoundedContainer(
+
+                      padding: EdgeInsets.all(TSizes.sm),
+                      showBorder: true,
+                      backgroundColor: Colors.transparent,
+                      child: Row(
+                        children: [
+                          ///---Icon
+                          TCircularImage(
+                            isNetworkImage: false,
+                          image: TImages.mobileIcon,
+                          backgroundColor: Colors.transparent,
+                          overlayColor: THelperFunctions.isDarkMode(context)? TColors.white: TColors.black,
                           ),
-                          child: Image(
-                            image: AssetImage(TImages.sportIcon),
-                            color: THelperFunctions.isDarkMode(context) ? TColors.white : TColors.dark,
-                          ),
+                          SizedBox(width: TSizes.spaceBtwItems /1.5,),
+
+                    ///---text
+                        Column(
+                          children: [
+//                            TBrandTitleText(title: 'Nike', ),
+
+                          TBrandTitleWithVerifiedIcon(title: 'Nike',brandTextSize: TextSizes.large, )
+                          ],
                         )
-                      ],
+
+                        ],
+                      ),
                     ),
                   )
                 ],
@@ -81,3 +92,4 @@ class StoreScreen extends StatelessWidget {
     );
   }
 }
+

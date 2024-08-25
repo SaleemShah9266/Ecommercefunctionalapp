@@ -6,7 +6,10 @@ import 'package:t_store/features/authentication/screens/Home/carts/TCircularIcon
 import 'package:t_store/features/authentication/screens/Home/carts/TProductPriceText.dart';
 import 'package:t_store/features/authentication/screens/Home/carts/TRoundedContainer.dart';
 import 'package:t_store/features/authentication/screens/Home/product/TProductTitleText.dart';
+import 'package:t_store/features/authentication/screens/Home/store/TBrandTitleText.dart';
+import 'package:t_store/features/authentication/screens/Home/store/TBrandTitleTextWithVerifiedIcon.dart';
 import 'package:t_store/utils/constants/TColors.dart';
+import 'package:t_store/utils/constants/enums.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
@@ -73,15 +76,9 @@ class TProductCardVertical extends StatelessWidget {
               children: [
                 TProductTitleText(title: "Green Nike Air Shoes", smallSize: true,),
                 SizedBox(height:  TSizes.spaceBtwItems / 2),
-                Row(
-                  children: [
-                    Text('Nike', overflow: TextOverflow.ellipsis, maxLines: 1,style: Theme.of(context).textTheme.labelMedium,),
-                    SizedBox(width: TSizes.xs,),
-                    Icon(Iconsax.verify5, color: TColors.primary, size: TSizes.iconxs,)
-                  ],
-                ),
+//                TBrandTitleText(title: 'Nike', ),
 
-      
+TBrandTitleWithVerifiedIcon(title: 'Nike', textColor: Colors.black ,)
               ],
             ),
       
@@ -112,15 +109,19 @@ class TProductCardVertical extends StatelessWidget {
                 )
 
               ],
-            )
-      
-      
-      
+            ),
+
+
+
+
+
+
           ],
         ),
       ),
     );
   }
 }
+
 
 
