@@ -3,6 +3,7 @@ import 'package:t_store/common/AppBar/AppBar.dart';
 import 'package:t_store/common/AppBar/TCartCounter.dart';
 import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/TSearchContainer.dart';
 import 'package:t_store/features/authentication/screens/Home/Custom_widgets_shapes/TSectionHeading.dart';
+import 'package:t_store/features/authentication/screens/Home/Layout/GridLayOut.dart';
 import 'package:t_store/features/authentication/screens/Home/carts/TRoundedContainer.dart';
 import 'package:t_store/features/authentication/screens/Home/store/TBrandTitleText.dart';
 import 'package:t_store/features/authentication/screens/Home/store/TBrandTitleTextWithVerifiedIcon.dart';
@@ -33,7 +34,7 @@ class StoreScreen extends StatelessWidget {
             pinned: true,
             floating: true,
             backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.black : TColors.white,
-            expandedHeight: 440,
+            expandedHeight: 600,
 
             flexibleSpace: Padding(
               padding: EdgeInsets.all(TSizes.defaultSpace),
@@ -50,41 +51,54 @@ class StoreScreen extends StatelessWidget {
                   TSectionHeading(title: 'Feature Brands', onPressed: (){},),
                   SizedBox(height: TSizes.spaceBtwItems /1.5,),
 
-                  Container(
-                    child: TRoundedContainer(
+                 TGridLayOut(itemCount: 4, mainAxisExtent: 88, itemBuilder: (_, index){
+                   return  GestureDetector(
+                     onTap: (){},
+                     child: TRoundedContainer(
 
-                      padding: EdgeInsets.all(TSizes.sm),
-                      showBorder: true,
-                      backgroundColor: Colors.transparent,
-                      child: Row(
-                        children: [
-                          ///---Icon
-                          TCircularImage(
-                            isNetworkImage: false,
-                          image: TImages.mobileIcon,
-                          backgroundColor: Colors.transparent,
-                          overlayColor: THelperFunctions.isDarkMode(context)? TColors.white: TColors.black,
-                          ),
-                          SizedBox(width: TSizes.spaceBtwItems /1.5,),
+                       padding: EdgeInsets.all(TSizes.sm),
+                       showBorder: true,
+                       backgroundColor: Colors.transparent,
+                       child: Row(
+                         children: [
+                           ///---Icon
+                           Flexible(
+                             child: TCircularImage(
+                               isNetworkImage: false,
+                               image: TImages.mobileIcon,
+                               backgroundColor: Colors.transparent,
+                               overlayColor: THelperFunctions.isDarkMode(context)? TColors.white: TColors.black,
+                             ),
+                           ),
+                           SizedBox(width: TSizes.spaceBtwItems /1.5,),
 
-                    ///---text
-                        Column(
-                          children: [
-//                            TBrandTitleText(title: 'Nike', ),
+                           ///---text
+                           Expanded(
+                             child: Column(
+                               crossAxisAlignment: CrossAxisAlignment.start,
+                               children: [
+                                 //
+                             
+                                 TBrandTitleWithVerifiedIcon(title: 'Nike',brandTextSize: TextSizes.large, ),
+                                 Text('256 products',
+                                   overflow: TextOverflow.ellipsis,
+                                   style: Theme.of(context).textTheme.labelMedium,
+                                 )
+                               ],
+                             ),
+                           ),
 
-                          TBrandTitleWithVerifiedIcon(title: 'Nike',brandTextSize: TextSizes.large, )
-                          ],
-                        )
+                         ],
+                       ),
+                     ),
+                   );
 
-                        ],
-                      ),
-                    ),
-                  )
+                 })
                 ],
               ),
             ),
 
-          )
+          ),
 
 
         ];
